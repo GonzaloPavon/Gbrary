@@ -27,10 +27,18 @@ const Table =({itemList, itemsPerPage, currentPage, tableHeads})=>{
             Tabla
             <table>
                 <thead>
+                    <tr className="flex space-x-4">
+                        {
+                            tableHeads.map((tableHeadItem)=>{
+                                return <th>{tableHeadItem}</th>
+                            })
+                        }
+                    </tr>
                 </thead>
                 <tbody>
-                    {
-                    }
+                    <tr>
+
+                    </tr>
                 </tbody>
             </table>
         </div>
