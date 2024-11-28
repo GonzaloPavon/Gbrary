@@ -27,7 +27,7 @@ const Table =({itemList, itemsPerPage, currentPage, tableHeads})=>{
             Tabla
             <table>
                 <thead>
-                    <tr className="flex space-x-4">
+                    <tr className="">
                         {
                             tableHeads.map((tableHeadItem)=>{
                                 return <th>{tableHeadItem}</th>
@@ -36,9 +36,18 @@ const Table =({itemList, itemsPerPage, currentPage, tableHeads})=>{
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-
-                    </tr>
+                    {currentItems !==undefined && currentItems !==null?currentItems.map((item)=>{
+                        console.log(item);
+                        const actualObjectKeys = Object.keys(item)
+                        return  <tr>
+                                    {
+                                        actualObjectKeys.map((key)=>{
+                                            return <td>{item[key]}</td>
+                                        })
+                                    }
+                                </tr>
+                    }):''
+                    }
                 </tbody>
             </table>
         </div>
